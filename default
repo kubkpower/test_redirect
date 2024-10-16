@@ -7,8 +7,8 @@ server {
     index  index.php index.html index.htm;
     server_name  example.com www.example.com;
     port_in_redirect off;
-    server_tokens off
-    more_clear_headers Server
+    server_tokens off;
+    more_clear_headers Server;
 
     location / {
         index  index.php index.html index.htm hostingstart.html;
