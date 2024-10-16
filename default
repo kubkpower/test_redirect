@@ -1,14 +1,9 @@
 server {
-    #proxy_cache cache;
-        #proxy_cache_valid 200 1s;
     listen 8080;
     listen [::]:8080;
-    root /home/site/wwwroot;
-    index  index.php index.html index.htm;
     server_name  kosredirect.azurewebsites.net;
-    port_in_redirect off;
-    server_tokens off;
-    more_clear_headers Server;
+    proxy_hide_header Server;
+    more_clear_headers "X-*";
 
-    rewrite ^/$ https://www.wakers.fr permanent;
+    return 301 https://www.wakers.fr;
 }
